@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
+  check-unchanged-dist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout highlight.js
+        uses: actions/checkout@v4
+        with:
+          repository: highlightjs/highlight.js
+          path: highlightjs
+      - name: Checkout highlightjs-your-language into extra/
+        uses: actions/checkout@v4
+        with:
+          repository: sebastiaanspeck/highlightjs-language-template
+          path: highlightjs/extra/highlightjs-your-language
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        working-directory: highlightjs
+        run: npm ci
+      - name: Build for CDN
+        working-directory: highlightjs
+        run: node ./tools/build.js -t cdn
+      - name: Check unchanged dist-folder
+        working-directory: highlightjs/extra/highlightjs-your-language
+        shell: bash
+        run: |
+            git status
+            exit $(git status --porcelain=v1 2>/dev/null | grep -c dist/)

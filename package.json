@@ -1,0 +1,40 @@
+{
+  "name": "highlightjs-your-language",
+  "version": "0.0.1",
+  "author": "Sebastiaan Speck",
+  "description": "A new language template set up when creating a language definition for highlightjs",
+  "main": "src/languages/your-language.js",
+  "scripts": {
+    "mocha": "mocha",
+    "test": "mocha test",
+    "test-markup": "mocha test/markup",
+    "test-detect": "mocha test/detect",
+    "lint": "eslint src/languages/your-language.js"
+  },
+  "files": [
+    "src/languages/your-language.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sebastiaanspeck/highlightjs-language-template.git"
+  },
+  "keywords": [
+    "your-language",
+    "javascript",
+    "highlight",
+    "highlight.js",
+    "highlightjs",
+    "syntax"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastiaanspeck/highlightjs-language-template/issues"
+  },
+  "homepage": "https://github.com/sebastiaanspeck/highlightjs-language-template",
+  "devDependencies": {
+    "highlight.js": "^11.11.1",
+    "eslint": "^9.27.0",
+    "mocha": "^11.2.2",
+    "should": "^13.2.3"
+  }
+}

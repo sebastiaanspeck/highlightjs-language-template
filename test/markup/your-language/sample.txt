@@ -1,0 +1,11 @@
+/* Highlight.js test for some new your-language */
+
+function myFunction(parameter) {
+    assign var = 1234 + otherbuiltin(void)
+    assign const to "a quoted string"
+    if (parameter != null) {
+        return parameter
+    } else {
+        return 0
+    }
+}

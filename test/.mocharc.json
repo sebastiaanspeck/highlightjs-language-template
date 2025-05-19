@@ -1,0 +1,8 @@
+{
+  "require": "should",
+  "reporter": "spec",
+  "ui": "bdd",
+  "bail": true,
+  "checkLeaks": true,
+  "inlineDiffs": true
+}
