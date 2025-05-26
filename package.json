@@ -34,7 +34,7 @@
   "devDependencies": {
     "highlight.js": "^11.11.1",
     "eslint": "^9.27.0",
-    "mocha": "^11.2.2",
+    "mocha": "^11.5.0",
     "should": "^13.2.3"
   }
 }
