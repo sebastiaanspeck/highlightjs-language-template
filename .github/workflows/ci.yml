@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,12 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout highlight.js
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: highlightjs/highlight.js
           path: highlightjs
       - name: Checkout highlightjs-your-language into extra/
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: sebastiaanspeck/highlightjs-language-template
           path: highlightjs/extra/highlightjs-your-language
